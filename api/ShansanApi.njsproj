@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>shansanApi</Name>
+    <RootNamespace>ShansanApi</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>99ec1c68-c978-4740-a254-2e09a636acd3</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>app.js</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app.js" />
+    <Compile Include="application\config\config.js" />
+    <Compile Include="application\config\defines.js" />
+    <Compile Include="application\config\mongodb.js" />
+    <Compile Include="application\config\mongoose.js" />
+    <Compile Include="application\config\routes.js" />
+    <Compile Include="application\controllers\index.js" />
+    <Compile Include="application\helpers\routes.js" />
+    <Compile Include="application\models\userModel.js" />
+    <Compile Include="Gruntfile.js" />
+    <Compile Include="lib\mongodb.js" />
+    <Compile Include="lib\mongoose.js" />
+    <Compile Include="lib\session.js" />
+    <Compile Include="modules\comment\assets\js\test.js" />
+    <Compile Include="modules\comment\controllers\mod.js" />
+    <Compile Include="modules\comment\models\sampleModel.js" />
+    <Compile Include="modules\comment\override.js" />
+    <Compile Include="modules\comment\routes.js" />
+    <Compile Include="routes\index.js" />
+    <Compile Include="routes\user.js" />
+    <Compile Include="system\core\sleek.js" />
+    <Compile Include="system\lib\functions.js" />
+    <Compile Include="system\lib\handhelpers.js" />
+    <Content Include="application\layouts\default.html" />
+    <Content Include="application\var\tmp\pqz40Oqj6czR1390813056409.html" />
+    <Content Include="application\views\default\home\assets.json" />
+    <Content Include="application\views\default\home\index.html" />
+    <Content Include="modules\comment\views\assets.json" />
+    <Content Include="modules\comment\views\home\index.html" />
+    <Content Include="modules\comment\views\test.html" />
+    <Content Include="package.json" />
+    <Content Include="public\stylesheets\style.styl" />
+    <Content Include="README.md" />
+    <Content Include="system\core\error.html" />
+    <Content Include="views\index.jade" />
+    <Content Include="views\layout.jade" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="application\" />
+    <Folder Include="application\config\" />
+    <Folder Include="application\controllers\" />
+    <Folder Include="application\helpers\" />
+    <Folder Include="application\layouts\" />
+    <Folder Include="application\models\" />
+    <Folder Include="application\var\" />
+    <Folder Include="application\var\tmp\" />
+    <Folder Include="application\views\" />
+    <Folder Include="application\views\default\" />
+    <Folder Include="application\views\default\home\" />
+    <Folder Include="lib\" />
+    <Folder Include="modules\" />
+    <Folder Include="modules\comment\" />
+    <Folder Include="modules\comment\assets\" />
+    <Folder Include="modules\comment\assets\js\" />
+    <Folder Include="modules\comment\controllers\" />
+    <Folder Include="modules\comment\models\" />
+    <Folder Include="modules\comment\views\" />
+    <Folder Include="modules\comment\views\home\" />
+    <Folder Include="public\" />
+    <Folder Include="public\images\" />
+    <Folder Include="public\javascripts\" />
+    <Folder Include="public\stylesheets\" />
+    <Folder Include="routes\" />
+    <Folder Include="system\" />
+    <Folder Include="system\core\" />
+    <Folder Include="system\lib\" />
+    <Folder Include="views\" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
