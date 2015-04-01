@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ProjectGuid>{bbf22694-5ff6-49e4-940b-2021391d2bb4}</ProjectGuid>
+        <ProjectHome />
+        <ProjectView>ShowAllFiles</ProjectView>
+        <StartupFile>gulpfile.js</StartupFile>
+        <WorkingDirectory>.</WorkingDirectory>
+        <OutputPath>.</OutputPath>
+        <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+        <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+        <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+    <ItemGroup>
+        <Content Include="bower.json" />
+        <Content Include="package.json" />
+        <Content Include="config.xml" />
+        <Compile Include="gulpfile.js" />
+        <Content Include="hooks\README.md" />
+        <Content Include="plugins\fetch.json" />
+        <Content Include="www\index.html" />
+        <Compile Include="hooks\after_prepare\010_add_platform_class.js" />
+        <Content Include="plugins\com.ionic.keyboard\package.json" />
+        <Content Include="plugins\com.ionic.keyboard\README.md" />
+        <Content Include="plugins\com.ionic.keyboard\plugin.xml" />
+        <Content Include="plugins\org.apache.cordova.console\package.json" />
+        <Content Include="plugins\org.apache.cordova.console\CONTRIBUTING.md" />
+        <Content Include="plugins\org.apache.cordova.console\README.md" />
+        <Content Include="plugins\org.apache.cordova.console\RELEASENOTES.md" />
+        <Content Include="plugins\org.apache.cordova.console\plugin.xml" />
+        <Content Include="plugins\org.apache.cordova.device\package.json" />
+        <Content Include="plugins\org.apache.cordova.device\CONTRIBUTING.md" />
+        <Content Include="plugins\org.apache.cordova.device\README.md" />
+        <Content Include="plugins\org.apache.cordova.device\RELEASENOTES.md" />
+        <Content Include="plugins\org.apache.cordova.device\plugin.xml" />
+        <Compile Include="plugins\com.ionic.keyboard\www\keyboard.js" />
+        <Compile Include="plugins\com.ionic.keyboard\src\blackberry10\index.js" />
+        <Content Include="plugins\org.apache.cordova.console\doc\index.md" />
+        <Compile Include="plugins\org.apache.cordova.console\www\console-via-logger.js" />
+        <Compile Include="plugins\org.apache.cordova.console\www\logger.js" />
+        <Content Include="plugins\org.apache.cordova.console\doc\de\index.md" />
+        <Content Include="plugins\org.apache.cordova.console\doc\es\index.md" />
+        <Content Include="plugins\org.apache.cordova.console\doc\fr\index.md" />
+        <Content Include="plugins\org.apache.cordova.console\doc\it\index.md" />
+        <Content Include="plugins\org.apache.cordova.console\doc\ja\index.md" />
+        <Content Include="plugins\org.apache.cordova.console\doc\ko\index.md" />
+        <Content Include="plugins\org.apache.cordova.console\doc\pl\index.md" />
+        <Content Include="plugins\org.apache.cordova.console\doc\ru\index.md" />
+        <Content Include="plugins\org.apache.cordova.console\doc\zh\index.md" />
+        <Content Include="plugins\org.apache.cordova.device\doc\index.md" />
+        <Content Include="plugins\org.apache.cordova.device\tests\plugin.xml" />
+        <Compile Include="plugins\org.apache.cordova.device\tests\tests.js" />
+        <Compile Include="plugins\org.apache.cordova.device\www\device.js" />
+        <Content Include="plugins\org.apache.cordova.device\doc\de\index.md" />
+        <Content Include="plugins\org.apache.cordova.device\doc\es\index.md" />
+        <Content Include="plugins\org.apache.cordova.device\doc\fr\index.md" />
+        <Content Include="plugins\org.apache.cordova.device\doc\it\index.md" />
+        <Content Include="plugins\org.apache.cordova.device\doc\ja\index.md" />
+        <Content Include="plugins\org.apache.cordova.device\doc\ko\index.md" />
+        <Content Include="plugins\org.apache.cordova.device\doc\pl\index.md" />
+        <Content Include="plugins\org.apache.cordova.device\doc\ru\index.md" />
+        <Content Include="plugins\org.apache.cordova.device\doc\zh\index.md" />
+        <Compile Include="plugins\org.apache.cordova.device\src\blackberry10\index.js" />
+        <Compile Include="plugins\org.apache.cordova.device\src\browser\DeviceProxy.js" />
+        <Compile Include="plugins\org.apache.cordova.device\src\firefoxos\DeviceProxy.js" />
+        <Compile Include="plugins\org.apache.cordova.device\src\tizen\DeviceProxy.js" />
+        <Compile Include="plugins\org.apache.cordova.device\src\ubuntu\device.js" />
+        <Compile Include="plugins\org.apache.cordova.device\src\windows\DeviceProxy.js" />
+        <Compile Include="plugins\org.apache.cordova.device\src\windows8\DeviceProxy.js" />
+        <Content Include="www\css\style.css" />
+        <Content Include="www\img\ionic.png" />
+        <Compile Include="www\js\app - 副本 .js" />
+        <Compile Include="www\js\app.js" />
+        <Content Include="www\templates\chat-detail.html" />
+        <Content Include="www\templates\tab-account.html" />
+        <Content Include="www\templates\tab-chats.html" />
+        <Content Include="www\templates\tab-dash.html" />
+        <Content Include="www\templates\tabs.html" />
+        <Compile Include="www\js\config\router.js" />
+        <Compile Include="www\js\ctrls\controllers.js" />
+        <Compile Include="www\js\servs\services.js" />
+        <Compile Include="www\js\ctrls\user\member.js" />
+        <Content Include="www\js\ctrls\user\auth\authWeibo.html" />
+        <Content Include="www\js\ctrls\user\auth\login.html" />
+        <Content Include="www\js\ctrls\user\auth\signup.html" />
+        <Compile Include="www\lib\ext\angular-local-storage.js" />
+        <Compile Include="www\lib\ext\City.js" />
+        <Compile Include="www\lib\ext\jquery-2.0.3.min.js" />
+        <Compile Include="www\lib\ext\moment.js" />
+        <Compile Include="www\lib\ext\socket.io.js" />
+        <Compile Include="www\lib\ext\url.js" />
+        <Content Include="www\lib\ionic\version.json" />
+        <Content Include="www\lib\ionic\css\ionic.css" />
+        <Content Include="www\lib\ionic\css\ionic.min.css" />
+        <Content Include="www\lib\ionic\fonts\ionicons.svg" />
+        <Compile Include="www\lib\ionic\js\ionic-angular.js" />
+        <Compile Include="www\lib\ionic\js\ionic-angular.min.js" />
+        <Compile Include="www\lib\ionic\js\ionic.bundle.js" />
+        <Compile Include="www\lib\ionic\js\ionic.bundle.min.js" />
+        <Compile Include="www\lib\ionic\js\ionic.js" />
+        <Compile Include="www\lib\ionic\js\ionic.min.js" />
+        <Compile Include="www\lib\ionic\js\angular\angular-animate.js" />
+        <Compile Include="www\lib\ionic\js\angular\angular-animate.min.js" />
+        <Compile Include="www\lib\ionic\js\angular\angular-resource.js" />
+        <Compile Include="www\lib\ionic\js\angular\angular-resource.min.js" />
+        <Compile Include="www\lib\ionic\js\angular\angular-sanitize.js" />
+        <Compile Include="www\lib\ionic\js\angular\angular-sanitize.min.js" />
+        <Compile Include="www\lib\ionic\js\angular\angular.js" />
+        <Compile Include="www\lib\ionic\js\angular\angular.min.js" />
+        <Compile Include="www\lib\ionic\js\angular-ui\angular-ui-router.js" />
+        <Compile Include="www\lib\ionic\js\angular-ui\angular-ui-router.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="bower" />
+        <Folder Include="hooks" />
+        <Folder Include="hooks\after_prepare" />
+        <Folder Include="plugins" />
+        <Folder Include="plugins\com.ionic.keyboard" />
+        <Folder Include="plugins\com.ionic.keyboard\src" />
+        <Folder Include="plugins\com.ionic.keyboard\src\android" />
+        <Folder Include="plugins\com.ionic.keyboard\src\blackberry10" />
+        <Folder Include="plugins\com.ionic.keyboard\src\blackberry10\native" />
+        <Folder Include="plugins\com.ionic.keyboard\src\blackberry10\native\device" />
+        <Folder Include="plugins\com.ionic.keyboard\src\blackberry10\native\device\public" />
+        <Folder Include="plugins\com.ionic.keyboard\src\blackberry10\native\device\src" />
+        <Folder Include="plugins\com.ionic.keyboard\src\blackberry10\native\public" />
+        <Folder Include="plugins\com.ionic.keyboard\src\blackberry10\native\public\json" />
+        <Folder Include="plugins\com.ionic.keyboard\src\blackberry10\native\simulator" />
+        <Folder Include="plugins\com.ionic.keyboard\src\blackberry10\native\simulator\public" />
+        <Folder Include="plugins\com.ionic.keyboard\src\blackberry10\native\simulator\src" />
+        <Folder Include="plugins\com.ionic.keyboard\src\blackberry10\native\src" />
+        <Folder Include="plugins\com.ionic.keyboard\src\ios" />
+        <Folder Include="plugins\com.ionic.keyboard\www" />
+        <Folder Include="plugins\org.apache.cordova.console" />
+        <Folder Include="plugins\org.apache.cordova.console\doc" />
+        <Folder Include="plugins\org.apache.cordova.console\doc\de" />
+        <Folder Include="plugins\org.apache.cordova.console\doc\es" />
+        <Folder Include="plugins\org.apache.cordova.console\doc\fr" />
+        <Folder Include="plugins\org.apache.cordova.console\doc\it" />
+        <Folder Include="plugins\org.apache.cordova.console\doc\ja" />
+        <Folder Include="plugins\org.apache.cordova.console\doc\ko" />
+        <Folder Include="plugins\org.apache.cordova.console\doc\pl" />
+        <Folder Include="plugins\org.apache.cordova.console\doc\ru" />
+        <Folder Include="plugins\org.apache.cordova.console\doc\zh" />
+        <Folder Include="plugins\org.apache.cordova.console\src" />
+        <Folder Include="plugins\org.apache.cordova.console\src\ios" />
+        <Folder Include="plugins\org.apache.cordova.console\src\ubuntu" />
+        <Folder Include="plugins\org.apache.cordova.console\src\wp" />
+        <Folder Include="plugins\org.apache.cordova.console\www" />
+        <Folder Include="plugins\org.apache.cordova.device" />
+        <Folder Include="plugins\org.apache.cordova.device\doc" />
+        <Folder Include="plugins\org.apache.cordova.device\doc\de" />
+        <Folder Include="plugins\org.apache.cordova.device\doc\es" />
+        <Folder Include="plugins\org.apache.cordova.device\doc\fr" />
+        <Folder Include="plugins\org.apache.cordova.device\doc\it" />
+        <Folder Include="plugins\org.apache.cordova.device\doc\ja" />
+        <Folder Include="plugins\org.apache.cordova.device\doc\ko" />
+        <Folder Include="plugins\org.apache.cordova.device\doc\pl" />
+        <Folder Include="plugins\org.apache.cordova.device\doc\ru" />
+        <Folder Include="plugins\org.apache.cordova.device\doc\zh" />
+        <Folder Include="plugins\org.apache.cordova.device\src" />
+        <Folder Include="plugins\org.apache.cordova.device\src\android" />
+        <Folder Include="plugins\org.apache.cordova.device\src\blackberry10" />
+        <Folder Include="plugins\org.apache.cordova.device\src\browser" />
+        <Folder Include="plugins\org.apache.cordova.device\src\firefoxos" />
+        <Folder Include="plugins\org.apache.cordova.device\src\ios" />
+        <Folder Include="plugins\org.apache.cordova.device\src\tizen" />
+        <Folder Include="plugins\org.apache.cordova.device\src\ubuntu" />
+        <Folder Include="plugins\org.apache.cordova.device\src\windows" />
+        <Folder Include="plugins\org.apache.cordova.device\src\windows8" />
+        <Folder Include="plugins\org.apache.cordova.device\src\wp" />
+        <Folder Include="plugins\org.apache.cordova.device\tests" />
+        <Folder Include="plugins\org.apache.cordova.device\www" />
+        <Folder Include="scss" />
+        <Folder Include="www" />
+        <Folder Include="www\css" />
+        <Folder Include="www\img" />
+        <Folder Include="www\js" />
+        <Folder Include="www\js\config" />
+        <Folder Include="www\js\ctrls" />
+        <Folder Include="www\js\ctrls\user" />
+        <Folder Include="www\js\ctrls\user\auth" />
+        <Folder Include="www\js\servs" />
+        <Folder Include="www\lib" />
+        <Folder Include="www\lib\ext" />
+        <Folder Include="www\lib\ionic" />
+        <Folder Include="www\lib\ionic\css" />
+        <Folder Include="www\lib\ionic\fonts" />
+        <Folder Include="www\lib\ionic\js" />
+        <Folder Include="www\lib\ionic\js\angular" />
+        <Folder Include="www\lib\ionic\js\angular-ui" />
+        <Folder Include="www\lib\ionic\scss" />
+        <Folder Include="www\lib\ionic\scss\ionicons" />
+        <Folder Include="www\templates" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
+    <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+    <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+    <ProjectExtensions>
+        <VisualStudio>
+          <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+            <WebProjectProperties>
+              <UseIIS>False</UseIIS>
+              <AutoAssignPort>True</AutoAssignPort>
+              <DevelopmentServerPort>0</DevelopmentServerPort>
+              <DevelopmentServerVPath>/</DevelopmentServerVPath>
+              <IISUrl>http://localhost:48022/</IISUrl>
+              <NTLMAuthentication>False</NTLMAuthentication>
+              <UseCustomServer>True</UseCustomServer>
+              <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+              <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+            </WebProjectProperties>
+          </FlavorProperties>
+          <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+            <WebProjectProperties>
+              <StartPageUrl>
+              </StartPageUrl>
+              <StartAction>CurrentPage</StartAction>
+              <AspNetDebugging>True</AspNetDebugging>
+              <SilverlightDebugging>False</SilverlightDebugging>
+              <NativeDebugging>False</NativeDebugging>
+              <SQLDebugging>False</SQLDebugging>
+              <ExternalProgram>
+              </ExternalProgram>
+              <StartExternalURL>
+              </StartExternalURL>
+              <StartCmdLineArguments>
+              </StartCmdLineArguments>
+              <StartWorkingDirectory>
+              </StartWorkingDirectory>
+              <EnableENC>False</EnableENC>
+              <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+            </WebProjectProperties>
+          </FlavorProperties>
+        </VisualStudio>
+    </ProjectExtensions>
+</Project>
