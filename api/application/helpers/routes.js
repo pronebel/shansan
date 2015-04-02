@@ -36,9 +36,9 @@
 var routeHelper = {
     helper: function(req,res,next){
         //don't forget to use next(), if the helper is used as a middleware
-        console.log ('I am a middleware function');
+        console.log ('I am a middlewa  re function');
         next();
-    }
+    }   
 };
 
 module.exports = routeHelper;

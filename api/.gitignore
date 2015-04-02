@@ -1,2 +1,7 @@
+nbproject
+.svn
+.bin
+node_modules
 /.ntvs_analysis.dat
-/node_modules
+/.idea
+/*.tmp

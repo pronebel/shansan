@@ -1,0 +1,9 @@
+{
+  "css": [
+      "test"
+  ],
+  "js": [
+    "page/custom"
+  ]
+  
+}

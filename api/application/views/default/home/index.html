@@ -1,17 +1,71 @@
-<div class="sub_container">
-    <div class="logo-col"><img src="/default/images/logo.png" alt=""> </div>
-    <h2>Welcome to {{title}}</h2>
-    <div class="sub_cnt_col">
-        <p>Sleek.Js is an MVC Framework implemented on Node.JS, built-in with base dependency on handlebars.js, express.js, mongoose. Sleek.Js architecture follows common format of MVC which makes it easy to handle and build better sites.</p>
+<div class="sub_container" style="padding:20px;">
 
-        <p>Using Sleek.Js we can make powerful websites in Nodejs platform. Sleek.Js gives better performance, flexibility and easy maintenance.</p>
 
-        <p>For documentation and other details, navigate to <a href="http://www.sleekjs.com/" target="_blank">Sleek.JS</a></p>
+    <h2>api:model:member</h2>
+    <p>
+        <label>CMD: <input type="text" name="cmd" value="member_login" /></label>
+        <label>json: <input style="width: 300px;" type="text" name="json" value='{"email":"nebel08@163.com","pwd":"1111"}' /></label>
+        <button  class="J_apiItem">提交</button>
+    </p>
 
-        <p>Cubet Techno Labs. Pvt. Ltd. owns and maintains Sleek.Js code and posts frequent updates. If you have any queries please feel free to contact us at <a href="mailto:info@cubettech.com" target="_blank">info@cubettech.com</a></p>
-    </div>
-    <div class="footer">
-        <p>Sleek.js © All Rights Reserved 2014</p>
-        <p>Powered by <a href="http://cubettech.com" target="_blank">Cubet Techno Labs, Cochin</a></p>
-    </div>
+    <p>
+        <label>CMD: <input type="text" name="cmd" value="member_signup" /></label>
+        <label>json: <input type="text" name="json" value='{"email":"teddd@163.com","pwd":"1111"}' /></label>
+        <button  class="J_apiItem">提交</button>
+    </p>
+    <p>
+        <label>CMD: <input type="text" name="cmd" value="member_profile" /></label>
+        <label>json: <input type="text" name="json" value='{"uid":"teddd@163.com","pwd":"1111"}' /></label>
+        <button  class="J_apiItem">提交</button>
+    </p>
+
+
+
+    <h2>weibo</h2>
+    <p>
+        <label>CMD: <input type="text" name="cmd" value="member_login" /></label>
+        <label>json: <input style="width: 300px;" type="text" name="json" value='{"email":"nebel08@163.com","pwd":"1111"}' /></label>
+        <button  class="J_apiItem">提交</button>
+    </p>
+
+
+    <script>
+        function jsonString(data) {
+            return encodeURIComponent(JSON.stringify(data))
+        }
+
+        $(document).ready(function(){
+
+            $("body").delegate(".J_apiItem","click",function(ev){
+
+
+                var btItem = $(ev.currentTarget);
+
+                var _item = btItem.closest("p");
+                var cmd =  $.trim(_item.find('input[name=cmd]').val());
+                var jsonStr = $.trim(_item.find('input[name=json]').val());
+
+                var json=  JSON.parse(jsonStr);
+                var postData = {
+                    cmd:cmd,
+                    json:jsonString(json)
+                }
+
+                console.log(postData);
+                $.ajax({
+                    type: "POST",
+                    url: 'api',
+                    data: postData,
+                    success: function(data){
+                        console.log(JSON.stringify(data));
+                    }
+                });
+            })
+        })
+
+
+    </script>
+
+
+
 </div>
