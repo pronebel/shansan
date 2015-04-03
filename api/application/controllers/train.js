@@ -5,7 +5,7 @@ iweibo.set({
 });
 var weibo = new iweibo.Weibo();
 
-var _ = require('lodash/dist/lodash.underscore');
+var _ = require('lodash');
 var baidu_map = require('baidu-map');
 
 var baiduApi = new baidu_map({

@@ -1,6 +1,6 @@
 var collection = mongodb.collection('service');
 var profiles = mongodb.collection('profiles');
-var _ = require('lodash/dist/lodash.underscore');
+var _ = require('lodash');
 
 
 var serviceModel = {

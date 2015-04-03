@@ -1,6 +1,6 @@
 var subjectCol = mongodb.collection('subject');
 
-var _ = require('lodash/dist/lodash.underscore');
+var _ = require('lodash');
 
 
 var serviceModel = {

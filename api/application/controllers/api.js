@@ -6,7 +6,7 @@ module.exports = {
         var json = req.param("json");
 
         var cmdArr = cmd.split("_");
-
+        console.log(cmd);
 
 
         var __mod = system.getModel(cmdArr[0]);
@@ -16,7 +16,7 @@ module.exports = {
         console.log(__params);
 
 
-        console.log(__mod[cmdArr[1]]);
+
 
 
         __mod[cmdArr[1]](__params, function(retJSON){
