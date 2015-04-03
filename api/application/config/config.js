@@ -3,7 +3,7 @@
  */
 
 //port number
-global.sleekConfig.appPort = 3001;
+global.sleekConfig.appPort = 8008;
 
 global.sleekConfig.appHost = '127.0.0.1';
 

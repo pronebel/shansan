@@ -21,6 +21,11 @@ exports.routes = [
     { route: '/api', controller: 'api', action: 'cmd', type: 'POST' },
     { route: '/weibo', controller: 'weibo', action: 'cmd', type: 'POST' },
 
+    {route: '/auth', controller: 'auth', action:'login'},
+    {route: '/auth/login', controller: 'auth', action:'extLogin'},
+    {route: '/callback', controller: 'auth', action:'callback'},
+
+
 ];
 
 //Define common function namess

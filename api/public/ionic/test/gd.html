@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>输入提示</title>
+    <link rel="stylesheet" type="text/css" href="http://developer.amap.com/Public/css/demo.Default.css" />
+    <script language="javascript" src="http://webapi.amap.com/maps?v=1.3&key=defaf60a82d97f126bcd54a4bd9b789b"></script>
+    <script language="javascript">
+        var mapObj;
+        //地图加载
+        function mapInit() {
+            //return;
+            mapObj = new AMap.Map("iCenter",{
+                view: new AMap.View2D({
+                    center:new AMap.LngLat(116.397428,39.90923),//地图中心点
+                    zoom:13 //地图显示的缩放级别
+                }),
+                keyboardEnable:false
+            });
+
+            if (navigator.userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("keyword").onpropertychange = autoSearch;
+            }
+            else {
+                document.getElementById("keyword").oninput = autoSearch;
+            }
+        }
+        //输入提示
+        function autoSearch() {
+            var keywords = document.getElementById("keyword").value;
+            var auto;
+            //加载输入提示插件
+            mapObj.plugin(["AMap.Autocomplete"], function() {
+                var autoOptions = {
+                    city: "" //城市，默认全国
+                };
+                auto = new AMap.Autocomplete(autoOptions);
+                //查询成功时返回查询结果
+                if ( keywords.length > 0) {
+                    AMap.event.addListener(auto,"complete",autocomplete_CallBack);
+                    auto.search(keywords);
+                }
+                else {
+                    document.getElementById("result1").style.display = "none";
+                }
+            });
+        }
+        function autocomplete_CallBack(data) {
+            var resultStr = "";
+            var tipArr = data.tips;
+            if (tipArr&&tipArr.length>0) {
+                for (var i = 0; i < tipArr.length; i++) {
+                    resultStr += "<div id='divid" + (i + 1) + "' onmouseover='openMarkerTipById(" + (i + 1)
+                            + ",this)' onclick='selectResult(" + i + ")' onmouseout='onmouseout_MarkerStyle(" + (i + 1)
+                            + ",this)' style=\"font-size: 13px;cursor:pointer;padding:5px 5px 5px 5px;\">" + tipArr[i].name + "<span style='color:#C1C1C1;'>"+ tipArr[i].district + "</span></div>";
+                }
+            }
+            else  {
+                resultStr = " π__π 亲,人家找不到结果!<br />要不试试：<br />1.请确保所有字词拼写正确<br />2.尝试不同的关键字<br />3.尝试更宽泛的关键字";
+            }
+            document.getElementById("result1").curSelect = -1;
+            document.getElementById("result1").tipArr = tipArr;
+            document.getElementById("result1").innerHTML = resultStr;
+            document.getElementById("result1").style.display = "block";
+        }
+
+        //鼠标移入时样式
+        function openMarkerTipById (pointid, thiss) {
+            thiss.style.background = '#CAE1FF';
+        }
+        //鼠标移开后样式恢复
+        function onmouseout_MarkerStyle(pointid, thiss) {
+            thiss.style.background = "";
+        }
+        //选择输入提示关键字
+        function selectResult(index) {
+            if (navigator.userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("keyword").onpropertychange = null;
+                document.getElementById("keyword").onfocus = focus_callback;
+            }
+            //截取输入提示的关键字部分
+            var text = document.getElementById("divid" + (index + 1)).innerHTML.replace(/<[^>].*?>.*<\/[^>].*?>/g,"");;
+            document.getElementById("keyword").value = text;
+            document.getElementById("result1").style.display = "none";
+        }
+
+        function focus_callback() {
+            if (navigator.userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("keyword").onpropertychange = autoSearch;
+            }
+        }
+        function keydown(event){
+            var key = (event||window.event).keyCode;
+            var result = document.getElementById("result1")
+            var cur = result.curSelect;
+            if(key===40){//down
+                if(cur + 1 < result.childNodes.length){
+                    if(result.childNodes[cur]){
+                        result.childNodes[cur].style.background='';
+                    }
+                    result.curSelect=cur+1;
+                    result.childNodes[cur+1].style.background='#CAE1FF';
+                    document.getElementById("keyword").value = result.tipArr[cur+1].name;
+                }
+            }else if(key===38){//up
+                if(cur-1>=0){
+                    if(result.childNodes[cur]){
+                        result.childNodes[cur].style.background='';
+                    }
+                    result.curSelect=cur-1;
+                    result.childNodes[cur-1].style.background='#CAE1FF';
+                    document.getElementById("keyword").value = result.tipArr[cur-1].name;
+                }
+            }else if(key === 13){
+                var res = document.getElementById("result1");
+                if(res && res['curSelect'] !== -1){
+                    selectResult(document.getElementById("result1").curSelect);
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="mapInit();">
+    <div class="demo_box">
+            <b>请输入关键字：</b>
+             <input type="text" id="keyword" name="keyword" value="" onkeydown='keydown(event)' style="width: 95%;"/>
+            <div id="result1" name="result1" style="overflow: auto; width: 95%; border: 1px solid gray;display: none;"></div>
+            <div id="result"></div>
+        </div>
+    <div id="iCenter" ></div>
+
+</body>
+</html>                                  
