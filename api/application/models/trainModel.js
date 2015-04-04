@@ -31,11 +31,21 @@ var serviceModel = {
         var sql = 'SELECT '+fileds+' FROM trains S ,trains E where '+ conds + order;
 
 
-        DB.query(sql).success(function(myTableRows) {
-            console.log(myTableRows.length);
-            callback(myTableRows)
-        })
 
+
+
+        DB.query(sql).spread(function (res, metadata) {
+            // Metadata contains the number of affected rows
+            console.log(res);
+            console.log(metadata);
+            console.log(res.length);
+            callback(res)
+        });
+
+        /*.success(function(myTableRows) {
+
+        })
+*/
 
     },
     stationAddressList:function(callback){
