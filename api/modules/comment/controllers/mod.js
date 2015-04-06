@@ -37,12 +37,13 @@ var indexController = {
         });
     },
     main:function(req,res){
-        var M = system.getPluginModel('sample');
+        var M = system.getPluginModel('sample','comment');
+        console.log(M);
         M.list(function(resl){
            var data = {
             title: "Comment Plugin"
             };
-            system.loadPluginView(res,'home/index', data);
+            system.loadPluginView(res,'home/index', data,'comment');
         });
     }
 };

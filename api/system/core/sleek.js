@@ -244,7 +244,7 @@ global.system = {
                 if(plugin[plugin.indexOf('controllers')-2] === 'modules') {
                     plugin = plugin[plugin.indexOf('controllers')-1];
                 } else {
-                    this.log('Please specify plugin name');
+                    this.log('Please specify plugin name 1');
                 }
             }
             if(!name){
@@ -469,7 +469,7 @@ global.system = {
                 if(plugin[plugin.indexOf('controllers')-2] === 'modules') {
                     plugin = plugin[plugin.indexOf('controllers')-1];
                 } else {
-                    this.log('Please specify plugin name');
+                    this.log('Please specify plugin name 2');
                 }
             }
             
@@ -499,7 +499,7 @@ global.system = {
                 if(plugin[plugin.indexOf('controllers')-2] === 'modules') {
                     plugin = plugin[plugin.indexOf('controllers')-1];
                 } else {
-                    this.log('Please specify plugin name');
+                    this.log('Please specify plugin name 3');
                 }
             }
             
@@ -575,7 +575,7 @@ global.system = {
                 if(plugin[plugin.indexOf('controllers')-2] === 'modules') {
                     plugin = plugin[plugin.indexOf('controllers')-1];
                 } else {
-                    this.log('Please specify plugin name');
+                    this.log('Please specify plugin name 4');
                 }
             }
             
