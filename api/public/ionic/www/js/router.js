@@ -26,17 +26,18 @@ Starter.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider)
     $ionicConfigProvider.setPlatformConfig('android', configProperties);
 
 
-    $stateProvider
 
+
+
+    var routerUrls = {
         // setup an abstract state for the tabs directive
-        .state('app', {
+        'app':{
             url: "/app",
             abstract: true,
             templateUrl: "templates/index/tabs.html",
             controller: 'AppCtrl'
-        })
-        //首页
-        .state('app.index', {
+        },
+        'app.index': {
             url: "/index",
             views: {
                 'index-tab': {
@@ -44,8 +45,8 @@ Starter.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider)
                     controller: 'IndexCtrl'
                 }
             }
-        })
-        .state('app.service', {
+        },
+        'app.service': {
             url: "/service",
             views: {
                 'service-tab': {
@@ -53,8 +54,8 @@ Starter.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider)
                     controller: 'IndexServiceCtrl'
                 }
             }
-        })
-        .state('app.subject', {
+        },
+        'app.subject': {
             url: "/subject",
             views: {
                 'subject-tab': {
@@ -62,50 +63,28 @@ Starter.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider)
                     controller: 'SubjectListCtrl'
                 }
             }
-        })
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-        //欢迎页
-        .state('tutorial', {
+        },
+        'tutorial': {
             url: '/tutorial',
             templateUrl: 'templates/help/tutorial.html',
             controller: 'TutorialCtrl'
-        })
-        .state('load', {
+        },
+        'load': {
             url: '/',
             templateUrl: 'templates/help/load.html',
             controller: 'LoadCtrl'
-        })
-        // Each tab has its own nav history stack:
-
-////////////////===Subject/////////////////////////////////////////////////
-
-        .state('subjectdetail', {
+        },
+        'subjectdetail': {
             url: "/subjectdetail/:id",
             templateUrl: "templates/subject/detail.html",
             controller: 'SubjectDetailCtrl'
-        })
-
-
-
-
-
-
-
-
-////////////////=/////////////////////////////////////////////////
-        // setup an abstract state for the tabs directive
-        .state('profile', {
+        },
+        'profile': {
             url: "/profile",
             abstract: true,
             templateUrl: "templates/profile/menu.html"
-        })
-        .state('profile.my', {
+        },
+        'profile.my': {
             url: '/my',
             views: {
                 'menuContent': {
@@ -113,18 +92,17 @@ Starter.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider)
                     controller: 'ProfileMainCtrl'
                 }
             }
-        })
-        .state('app.friend-detail', {
+        },
+        'app.friend-detail': {
             url: '/friend/:friendId',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/user/detail.html',
+                    templateUrl: 'js/base/view/detail.html',
                     controller: 'FriendDetailCtrl'
                 }
             }
-        })
-
-        .state('app.account', {
+        },
+        'app.account': {
             url: '/account',
             views: {
                 'menuContent': {
@@ -132,24 +110,26 @@ Starter.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider)
                     controller: 'AccountCtrl'
                 }
             }
-        })
-/*------------------------- Train -----------------------------------------*/
-        .state('train', {
+        }
+
+    }
+    var TrainRouters = {
+        'train': {
             url: "/train",
             abstract: true,
             templateUrl: 'templates/train/tab.html'
-        })
-        .state('train.index', {
+        },
+        'train.index': {
             url: '/index',
             views: {
                 'index-train-tab': {
                     templateUrl: 'templates/train/index.html'
-                  //  controller: 'TrainSearchCtrl'
+                    //  controller: 'TrainSearchCtrl'
                 }
             }
 
-        })
-        .state('train.search', {
+        },
+        'train.search': {
             url: '/search',
             views: {
                 'query-train-tab': {
@@ -157,8 +137,8 @@ Starter.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider)
                     controller: 'TrainSearchCtrl'
                 }
             }
-        })
-        .state('train.line', {
+        },
+        'train.line': {
             url: '/line',
             views: {
                 'query-train-tab': {
@@ -167,18 +147,18 @@ Starter.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider)
                 }
             }
 
-        })
-        .state('train.happy', {
+        },
+        'train.happy': {
             url: '/happy',
             views: {
                 'happy-train-tab': {
                     templateUrl: 'templates/train/happy/main.html',
-                   // controller: 'LineCtrl'
+                    // controller: 'LineCtrl'
                 }
             }
 
-        })
-        .state('train.travel', {
+        },
+        'train.travel': {
             url: '/travel',
             views: {
                 'travel-train-tab': {
@@ -187,70 +167,86 @@ Starter.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider)
                 }
             }
 
-        })
+        }
 
-
-
-
-
-
-/*------------------------- WeiEarn -----------------------------------------*/
-
-        .state('nearby', {
+    }
+    var WeiEarnRouters = {
+        'nearby': {
             url: '/nearby',
             templateUrl: 'templates/weiearn/nearby.html',
             controller: 'NearbyCtrl'
-        })
-        .state('earnuserlist', {
+        },
+        'earnuserlist': {
             url: '/earnuserlist',
             templateUrl: 'templates/weiearn/userlist.html',
             controller: 'WeiEarnUserListCtrl'
-        })
-        .state('earnuserdetail', {
+        },
+        'earnuserdetail': {
             url: '/earnuserdetail/:uid',
             templateUrl: 'templates/weiearn/userdetail.html',
             controller: 'WeiEarnUserDetailCtrl'
-        })
-        .state('earnservice', {
+        },
+        'earnservice': {
             url: '/earnservice',
             templateUrl: 'templates/weiearn/service.html',
             controller: 'WeiEarnServiceCtrl'
-        })
-        .state('chat', {
+        },
+        'chat': {
             url: '/chat',
             templateUrl: 'templates/weiearn/chat.html',
             controller: 'ChatCtrl'
-        })
+        }
 
-
-
-
-        /*------------------------- Plan -----------------------------------------*/
-        .state('travel', {
+    }
+    var PlanRouters = {
+        'travel': {
             url: '/travel',
             templateUrl: 'templates/scence/search-form.html',
             controller: 'TravelCtrl'
-        })
-        .state('travellist', {
+        },
+        'travellist': {
             url: '/travel/list',
             templateUrl: 'templates/scence/list.html',
             controller: 'TravelListCtrl'
-        })
-        .state('plandetail', {
+        },
+        'plandetail': {
             url: '/plan/detail/:planId',
             templateUrl: 'templates/plan/detail.html',
             controller: 'PlanDetailCtrl'
-        })
-        .state('planList', {
+        },
+        'planList': {
             url: '/plan/list',
             templateUrl: 'templates/plan/list.html',
             controller: 'PlanListCtrl'
-        })
-        .state('plandetailmap', {
+        },
+        'plandetailmap': {
             url: '/plan/map/:planId',
             templateUrl: 'templates/plan/detailMap.html',
             controller: 'PlanDetailMapCtrl'
+        }
+
+    }
+
+
+    var __routers = angular.extend({},routerUrls,TrainRouters,WeiEarnRouters,PlanRouters);
+
+
+    for(var stateName in __routers){
+        $stateProvider.state(stateName,__routers[stateName]);
+    }
+
+
+    $stateProvider
+
+
+
+        .state('login', {
+            url: '/login',
+            templateUrl: 'js/base/view/auth/login.html',
+            controller: 'AuthCtrl'
         })
+
+
         .state('camera', {
             url: '/camera',
             templateUrl: 'templates/example/camera.html',
@@ -263,11 +259,7 @@ Starter.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider)
             controller: 'ExamCtrl'
         })
     //
-        .state('login', {
-            url: '/login',
-            templateUrl: 'templates/user/auth/login.html',
-            controller: 'AuthCtrl'
-        })
+
 
 
 

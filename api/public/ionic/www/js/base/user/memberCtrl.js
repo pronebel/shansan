@@ -3,10 +3,10 @@ Starter_Controller
 
         $scope.signUp={}, $scope.auth={},$scope.login={};
 
-        $ionicModal.fromTemplateUrl('templates/user/auth/signup.html', { scope: $scope}).then(function (modal) {
+        $ionicModal.fromTemplateUrl('js/base/view/auth/signup.html', { scope: $scope}).then(function (modal) {
             $scope.signUpModal = modal;
         });
-        $ionicModal.fromTemplateUrl('templates/user/auth/authWeibo.html', { scope: $scope}).then(function (modal) {
+        $ionicModal.fromTemplateUrl('js/base/view/auth/authWeibo.html', { scope: $scope}).then(function (modal) {
             $scope.authModal = modal;
         });
 

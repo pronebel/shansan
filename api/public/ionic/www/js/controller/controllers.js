@@ -5,7 +5,7 @@ Starter_Controller
 
         var ref=null;
 
-        $ionicModal.fromTemplateUrl('templates/user/login.html', {
+        $ionicModal.fromTemplateUrl('js/base/view/login.html', {
             scope: $scope
         }).then(function (modal) {
             $scope.modal = modal;
