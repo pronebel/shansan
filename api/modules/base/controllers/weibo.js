@@ -18,6 +18,13 @@ var weiboController = {
             var result = JSON.parse(result);
             res.json(result);
         });
+    },
+    test:function(req,res){
+        var data = {
+            title: "微博API测试"
+        }
+        //load index.html from home directory
+        system.loadPluginView(res,'weiboapi', data,"base");
     }
 
 }

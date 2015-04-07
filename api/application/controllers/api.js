@@ -8,8 +8,14 @@ module.exports = {
         var cmdArr = cmd.split("_");
         console.log(cmd);
 
+        var __mod ;
+        if(cmdArr[0]=="member"){
+            __mod = system.getPluginModel(cmdArr[0],'base');
+        }else{
+            __mod = system.getModel(cmdArr[0]);
+        }
 
-        var __mod = system.getModel(cmdArr[0]);
+
         var __params = JSON.parse(decodeURIComponent(json));
         console.log(__mod);
 

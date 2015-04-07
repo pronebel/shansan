@@ -31,7 +31,6 @@ Starter.run(function($ionicPlatform) {
 });
 
 
-ev.preventDefault();
 
 var RouterManage = (function(){
     var __router = {};
