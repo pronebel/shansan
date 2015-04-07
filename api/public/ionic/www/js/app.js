@@ -31,5 +31,19 @@ Starter.run(function($ionicPlatform) {
 });
 
 
+var RouterManage = (function(){
+    var __router = {};
+
+    return {
+        add:function(routerJson){
+            angular.extend(__router,routerJson);
+        },
+        get:function(){
+            return __router;
+        }
+    }
+})();
+
+
 var Starter_Controller = angular.module('starter.controllers', []);
 var Starter_Services = angular.module('starter.services', ['ngResource'])

@@ -227,9 +227,12 @@ Starter.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider)
 
     }
 
+    RouterManage.add(routerUrls);
+    RouterManage.add(TrainRouters);
+    RouterManage.add(WeiEarnRouters);
+    RouterManage.add(PlanRouters);
 
-    var __routers = angular.extend({},routerUrls,TrainRouters,WeiEarnRouters,PlanRouters);
-
+    var __routers = RouterManage.get();
 
     for(var stateName in __routers){
         $stateProvider.state(stateName,__routers[stateName]);
@@ -240,11 +243,6 @@ Starter.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider)
 
 
 
-        .state('login', {
-            url: '/login',
-            templateUrl: 'js/base/view/auth/login.html',
-            controller: 'AuthCtrl'
-        })
 
 
         .state('camera', {
