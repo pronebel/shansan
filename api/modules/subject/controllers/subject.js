@@ -5,7 +5,7 @@ var indexController = {
         var data = {
             title: "专题列表"
         }
-        system.loadView(res,'subject/list', data);
+        system.loadPluginView(res,'subject/list', data,'subject');
     },
     edit:function(req,res){
         var data = {
@@ -16,7 +16,7 @@ var indexController = {
 
 
 
-        system.loadView(res,'subject/form', data);
+        system.loadPluginView(res,'subject/form', data,'subject');
     }
 }
 

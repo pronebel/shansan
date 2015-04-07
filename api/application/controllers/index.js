@@ -7,11 +7,10 @@
 var indexController = {
     index:function(req, res){
         var data = {
-            layout:"single",
             title: "Sleek.js"
         }
         //load index.html from home directory
-        system.loadView(res,'home/index', data);
+        system.loadView(res,'index', data);
     },
 	login:function(req, res){
         var data = {

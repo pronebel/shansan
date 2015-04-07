@@ -20,7 +20,7 @@ module.exports = {
      * }
      */
     signup:function(req,res){
-        var mem = system.getModel("member");
+        var mem = system.getPluginModel("member",'base');
 
         mem.signup(data,function(resp){
             res.end(JSON.stringify(resp));
@@ -31,9 +31,11 @@ module.exports = {
 
 
     login: function(req, res) {
-        var data = {}
+        var data = {
+            layout:null
+        }
         data.loginURL = weibo.getAuthorizeURL(backURL);
-        system.loadView(res,'auth/auth', data);
+        system.loadPluginView(res,'auth/login', data,'base');
     },
     extLogin:function(req,res){
 
@@ -52,7 +54,7 @@ module.exports = {
 
         weibo.api('users/show', data).done(function(err, result) {
 
-            var userMod = system.getModel("member");
+            var userMod = system.getPluginModel("member",'base');
             userMod.insertWeiboProfile(JSON.parse(result));
         });
     },
@@ -77,7 +79,7 @@ module.exports = {
                 uid:data.uid
             }).done(function(err, result) {
 
-                var userMod = system.getModel("member");
+                var userMod = system.getPluginModel("member",'base');
 
                 var profile = JSON.parse(result);
 
@@ -92,7 +94,7 @@ module.exports = {
 
                 userMod.insertWeiboUserProfile(paramsData, function(number){
                     console.log(number);
-                    system.loadView(res,'auth/callback', data);
+                    system.loadPluginView(res,'auth/callback', data,'base');
                     sleekio.sockets.emit("token",paramsData);
 
                 });
