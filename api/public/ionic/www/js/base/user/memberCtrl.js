@@ -140,3 +140,105 @@ Starter_Controller
 
 
     });
+
+
+
+
+Starter_Controller
+.controller('LoginCtrl', function ($scope, $ionicModal, $timeout, $ionicLoading,socket) {
+
+    $scope.loginData = {};
+
+    var ref=null;
+
+    $ionicModal.fromTemplateUrl('js/base/view/auth2/login.html', {
+        scope: $scope
+    }).then(function (modal) {
+        $scope.modal = modal;
+    });
+
+
+
+
+
+
+    socket.on('token', function(data){
+        console.log(data);
+        $scope.modal.hide();
+    });
+
+    // Triggered in the login modal to close it
+    $scope.closeLogin = function () {
+        $scope.modal.hide();
+    };
+
+    $scope.weiboAuth=function(){
+
+        socket.emit("token",{
+            uid:1001
+        });
+
+        var url="http://127.0.0.1:8008/auth/login";
+        ref = window.open(url, '_blank', 'location=no');
+
+    }
+
+
+    // Open the login modal
+    $scope.login = function () {
+        console.log("login");
+        if (!$scope.loginData.username) {
+            $scope.modal.show();
+        }
+    };
+
+    // Perform the login action when the user submits the login form
+    $scope.doLogin = function () {
+
+        try{
+            navigator.weibo.init(function(response) {
+                navigator.weibo.login(function(token) {
+                    console.log(token);
+                    alert("test");
+                }, function(msg) {
+                    console.log("login error : " + msg);
+                });
+            }, function(response) {
+                console.log(response);
+            }, '3952338548', "https://api.weibo.com/oauth2/default.html");
+
+        }catch(ex){
+            console.log(ex);
+        }
+
+
+
+        /*console.log($scope.loginData);
+         if (!$scope.loginData.username || !$scope.loginData.password) {
+
+         var alertPopup = $ionicPopup.alert({
+         title: '提示!',
+         template: '请输入登陆信息'
+         });
+         } else {
+
+         console.log('Doing login', $scope.loginData);
+
+         // Simulate a login delay. Remove this and replace with your login
+         // code if using a login system
+         $timeout(function () {
+         $scope.closeLogin();
+         $ionicLoading.hide();
+         }, 1000);
+
+         //显示loading
+         $ionicLoading.show({
+         template: 'Loading...'
+         });
+
+         }
+         */
+
+    };
+
+})

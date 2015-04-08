@@ -5,7 +5,11 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-
+    <script>
+        var Cfg={
+            api:"http://127.0.0.1:8008/api"
+        }
+    </script>
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
 
@@ -38,7 +42,10 @@
 <script src="lib/ext/angular-local-storage.js"></script>
 <script src="lib/ext/City.js"></script>
 <script src="lib/ext/moment.js"></script>
-<script src="js/app.js"></script>
+
+
+
+<script src="js/controller/app.js"></script>
 
 <script src="lib/plugin/ionic.swipecards.js"></script>
 <script src="lib/plugin/ionic.contrib.frostedGlass.js"></script>
@@ -46,13 +53,6 @@
 <script src="lib/plugin/map/china-city.js"></script>
 
 
-
-<script src="js/controller/controllers.js"></script>
-<script src="js/controller/travel/searchCtrl.js"></script>
-<script src="js/controller/travel/subjectCtrl.js"></script>
-<script src="js/controller/travel/trainCtrl.js"></script>
-<script src="js/controller/weiearn/weiearnCtrl.js"></script>
-<script src="js/base/user/memberCtrl.js"></script>
 
 <script src="js/services/services.js"></script>
 <script src="js/services/scence.js"></script>
@@ -63,12 +63,20 @@
 <script src="js/services/profile.js"></script>
 <script src="lib/directives/baiduMap.js"></script>
 <script src="lib/plugin/map/baidu.js"></script>
-<script>
-    var Cfg={
-        api:"http://127.0.0.1:8008/api"
-    }
-</script>
+
+
+
+
+<script src="js/controller/controllers.js"></script>
+<script src="js/controller/travel/searchCtrl.js"></script>
+<script src="js/controller/travel/subjectCtrl.js"></script>
+<script src="js/controller/travel/trainCtrl.js"></script>
+<script src="js/controller/weiearn/weiearnCtrl.js"></script>
+<script src="js/base/user/memberCtrl.js"></script>
+<script src="js/base/baseCtrl.js"></script>
+
 <script src="js/base/routers.js"></script>
-<script src="js/router.js"></script>
+<script src="js/controller/router.js"></script>
+<script src="js/controller/start.js"></script>
 </body>
 </html>

@@ -1,98 +1,7 @@
 Starter_Controller
-    .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $ionicLoading,socket) {
-
-        $scope.loginData = {};
-
-        var ref=null;
-
-        $ionicModal.fromTemplateUrl('js/base/view/login.html', {
-            scope: $scope
-        }).then(function (modal) {
-            $scope.modal = modal;
-        });
+    .controller('AppCtrl', function ($scope) {
 
 
-
-
-
-
-        socket.on('token', function(data){
-            console.log(data);
-            $scope.modal.hide();
-        });
-
-        // Triggered in the login modal to close it
-        $scope.closeLogin = function () {
-            $scope.modal.hide();
-        };
-
-        $scope.weiboAuth=function(){
-
-            socket.emit("token",{
-                uid:1001
-            });
-
-            var url="http://127.0.0.1:8008/auth/login";
-            ref = window.open(url, '_blank', 'location=no');
-
-        }
-
-
-        // Open the login modal
-        $scope.login = function () {
-            if (!$scope.loginData.username) {
-                $scope.modal.show();
-            }
-        };
-
-        // Perform the login action when the user submits the login form
-        $scope.doLogin = function () {
-
-            try{
-                navigator.weibo.init(function(response) {
-                    navigator.weibo.login(function(token) {
-                        console.log(token);
-                        alert("test");
-                    }, function(msg) {
-                        console.log("login error : " + msg);
-                    });
-                }, function(response) {
-                    console.log(response);
-                }, '3952338548', "https://api.weibo.com/oauth2/default.html");
-
-            }catch(ex){
-                console.log(ex);
-            }
-
-
-
-            /*console.log($scope.loginData);
-            if (!$scope.loginData.username || !$scope.loginData.password) {
-
-                var alertPopup = $ionicPopup.alert({
-                    title: '提示!',
-                    template: '请输入登陆信息'
-                });
-            } else {
-
-                console.log('Doing login', $scope.loginData);
-
-                // Simulate a login delay. Remove this and replace with your login
-                // code if using a login system
-                $timeout(function () {
-                    $scope.closeLogin();
-                    $ionicLoading.hide();
-                }, 1000);
-
-                //显示loading
-                $ionicLoading.show({
-                    template: 'Loading...'
-                });
-
-            }
-*/
-
-        };
 
     })
     .controller('IndexCtrl', function ($scope, $ionicModal, $timeout, $ionicLoading,socket,API,Auth,
@@ -156,12 +65,15 @@ Starter_Controller
             $scope.cards.push(angular.extend({}, newCard));
         }
     })
-    .controller('CardCtrl', function($scope, $ionicSwipeCardDelegate) {
-        $scope.goAway = function() {
+
+    .controller('CardCtrl', function ($scope, $ionicSwipeCardDelegate) {
+        $scope.goAway = function () {
             var card = $ionicSwipeCardDelegate.getSwipebleCard($scope);
             card.swipe();
         };
     })
+
+
     .controller('ProfileMainCtrl', function ($scope, Friends) {
     })
 
@@ -189,39 +101,11 @@ Starter_Controller
 
 
     })
-    .controller('TutorialCtrl', function ($scope, $rootScope, $state, $timeout, $ionicViewService,localStorageService) {
-
-        // "立即体验"按钮Event
-        $scope.gotoMain = function () {
-//            $ionicViewService.clearHistory();
-            // 默认进入首页
-            $state.go('auth');
-        }
-
-        $scope.slideHasChanged = function (index) {
-            console.log(index);
-
-        };
-    })
-    .controller('LoadCtrl', function ($scope, $rootScope, $state, $timeout, $ionicViewService,localStorageService) {
-
-        var loginData = localStorageService.get("Profile");
-        if(loginData&&loginData.wb_auth){
-            $state.go("app.index")
-        }else{
-            $state.go("login")
-        }
-
-    })
 
 
 
-    .controller('CardCtrl', function ($scope, $ionicSwipeCardDelegate) {
-        $scope.goAway = function () {
-            var card = $ionicSwipeCardDelegate.getSwipebleCard($scope);
-            card.swipe();
-        };
-    })
+
+
     .controller('ExamCtrl', function($scope, Camera, formDataObject,fileReader, $http) {
         $scope.loginData={
             total:45,
