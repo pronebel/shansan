@@ -30,7 +30,7 @@
  * @Date 13-06-2014
  */
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 //get sleek configs
     global.sleekConfig = {};
     require("./application/config/config.js");
@@ -79,35 +79,35 @@ module.exports = function(grunt) {
                     jQuery: true
                 }
             },
-            all: [    'Gruntfile.js',
-                    'lib/**/*.js',
-                    'application/**/*.js',
-                    'system/**/*.js',
-                    'modules/**/*.js',
-                    '!system/lib/handhelpers.js',
-                    '!system/lib/functions.js',
-                    '!system/core/db.js',
-                    '!system/core/sleek.js'
+            all: ['Gruntfile.js',
+                'lib/**/*.js',
+                'application/**/*.js',
+                'system/**/*.js',
+                'modules/**/*.js',
+                '!system/lib/handhelpers.js',
+                '!system/lib/functions.js',
+                '!system/core/db.js',
+                '!system/core/sleek.js'
             ]
         },
         open: {
             dev: {
                 path: 'http://' + sleekConfig.appHost + ':' + sleekConfig.appPort,
-               // app: 'firefox',
-		options: {
-			delay:100
-		}
+                // app: 'firefox',
+                options: {
+                    delay: 100
+                }
 
             }
         },
         watch: {
             html: {
-                files:    ['./**/*.html'],
-                tasks:    ['htmlhint']
+                files: ['./**/*.html'],
+                tasks: ['htmlhint']
             },
             js: {
-                files:    ['./**/*.js'],
-                tasks:    ['jshint']
+                files: ['./**/*.js'],
+                tasks: ['jshint']
             }
         }
     });

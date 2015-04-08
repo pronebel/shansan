@@ -4,9 +4,7 @@ var stationAddressClt = mongodb.collection('station_address');
 
 
 var _ = require('lodash');
-//var Train = MysqlModel.Train;
-var Station = MysqlModel.Station;
-var DB = MysqlModel.sequelize;
+
 
 var serviceModel = {
 
@@ -17,6 +15,8 @@ var serviceModel = {
     },
 
     analysisStation:function(callback){
+
+        var Station = system.getModel("station");
 
         Station.findAll().success(function(stations) {
             callback(stations);
@@ -34,7 +34,7 @@ var serviceModel = {
 
 
 
-        DB.query(sql).spread(function (res, metadata) {
+        mysqldb.query(sql).spread(function (res, metadata) {
             // Metadata contains the number of affected rows
             console.log(res);
             console.log(metadata);

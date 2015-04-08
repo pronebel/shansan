@@ -1,4 +1,4 @@
-var iweibo = require('iweibo');
+var iweibo = system.getLibrary('weibo/index');
 iweibo.set({
     appkey: '1539652173',
     appsecret: 'a4b2b1feaf3784900c7938e68edc534f'

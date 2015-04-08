@@ -1,8 +1,10 @@
-var iweibo = require('iweibo');
+var iweibo = system.getLibrary('weibo/index');
 iweibo.set({
     appkey: '1539652173',
     appsecret: 'a4b2b1feaf3784900c7938e68edc534f'
 });
+
+
 var weibo = new iweibo.Weibo();
 
 
@@ -14,6 +16,7 @@ var weiboController = {
 
         var __params = JSON.parse(decodeURIComponent(json));
 
+        console.log(__params);
         weibo.api(cmd, __params).done(function(err, result) {
             var result = JSON.parse(result);
             res.json(result);

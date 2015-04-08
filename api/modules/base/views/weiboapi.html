@@ -3,9 +3,13 @@
 
 
     <h2>weibo</h2>
+    <p> <label>accesstoken: <input type="text" name="token" id="J_token" style="width:400px" value="2.00tLJWnBZrNMgBd680f478003QIgDB" /></label></p>
     <p>
-        <label>CMD: <input type="text" name="cmd" value="member_login" /></label>
-        <label>json: <input style="width: 300px;" type="text" name="json" value='{"email":"nebel08@163.com","pwd":"1111"}' /></label>
+
+        <label>CMD: <input type="text" name="cmd" value="statuses/public_timeline" /></label>
+        <label>json: <input style="width: 300px;" type="text" name="json" value='{}' /></label>
+
+
         <button  class="J_apiItem">提交</button>
     </p>
 
@@ -25,8 +29,11 @@
                 var _item = btItem.closest("p");
                 var cmd =  $.trim(_item.find('input[name=cmd]').val());
                 var jsonStr = $.trim(_item.find('input[name=json]').val());
+                var token = $.trim($("#J_token").val());
 
                 var json=  JSON.parse(jsonStr);
+                json.access_token = token;
+                console.log(json);
                 var postData = {
                     cmd:cmd,
                     json:jsonString(json)
@@ -35,7 +42,7 @@
                 console.log(postData);
                 $.ajax({
                     type: "POST",
-                    url: 'api',
+                    url: '/weibo/api',
                     data: postData,
                     success: function(data){
                         console.log(JSON.stringify(data));
